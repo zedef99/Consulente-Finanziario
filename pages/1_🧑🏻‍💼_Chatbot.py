@@ -89,7 +89,7 @@ if st.session_state.start_chat:
             st.markdown(message["content"])
 
     # Chat input for the user
-    if prompt := st.chat_input("How can I help you?"):
+    if prompt := st.chat_input("Come posso aiutarti?"):
         # Add user message to the state and display it
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
@@ -106,7 +106,7 @@ if st.session_state.start_chat:
         run = client.beta.threads.runs.create(
             thread_id=st.session_state.thread_id,
             assistant_id=assistant_id,
-            instructions="Rispondi alle domande sulla base del file di cui disponi"
+            instructions="Rispondi alle domande sulla base del file di cui disponi."
         )
 
         # Poll for the run to complete and retrieve the assistant's messages
